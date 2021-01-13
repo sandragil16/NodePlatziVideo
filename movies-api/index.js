@@ -1,10 +1,10 @@
 const express = require('express');
 const app = express();
 
-import { config } from './config/index';
-import moviesApi from './routes/movies.js';
+const { config } = require('./config/index');
+const {moviesMock } = require('./routes/movies.js');
 
-moviesApi(app);
+moviesMock(app);
 
 app.listen(config.port, function() {
     console.log(`Listening http://localhost:${config.port}`);
